@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -63,18 +64,23 @@
 
 
 
-            <section class="flex  flex-row justify-between items-start gap-4 py-3">
+            <section class="flex flex-col lg:flex-row justify-between items-start gap-4 py-3">
                 <div id="pets-card" class="flex-grow lg:w-[60%] grid grid-cols-1 lg:grid-cols-3 gap-3 py-2">
+                </div>
                     <!-- Pet cards will be appended here -->
+
                 </div>
-                
-                <div  class="lg:w-[40%] grid grid-cols-1  gap-2 overflow-hidden  h-full p-2">
-                    <button id="asending" class="btn btn-sm  w-[150px] bg-[#0E7A81] text-white text-xl font-semibold">Sort by Price</button>
-                    <div id="image" class=" grid grid-cols-1 lg:grid-cols-2 gap-2 overflow-hidden h-full p-2"></div>
-                </div>
-                    <!-- Images will be appended here -->
+            
+                <div class="lg:w-[40%] flex flex-col gap-2 overflow-hidden h-full p-2">
+                    <button id="asending" class="btn btn-sm w-full md:w-[150px] bg-[#0E7A81] text-white text-xl font-semibold">
+                        Sort by Price
+                    </button>
+                    <div id="image" class="grid grid-cols-1 lg:grid-cols-2 gap-2 overflow-hidden h-full p-2">
+                        <!-- Images will be appended here -->
+                    </div>
                 </div>
             </section>
+            
            
             <!-- Open the modal using ID.showModal() method -->
 
@@ -99,17 +105,7 @@
 <div id="pets-card">
     <!-- Pet cards will be dynamically inserted here -->
 </div>
-<dialog id="pet-details-modal" class="bg-white rounded-lg p-4 shadow-lg">
-    <h2 id="pet-name" class="text-2xl font-bold"></h2>
-    <p id="pet-description"></p>
-    <p id="pet-vaccination-history"></p>
-    <p id="pet-breed"></p>
-    <p id="pet-age"></p>
-    <p id="pet-gender"></p>
-    <p id="pet-price"></p>
-    <img id="pet-image" class="w-full h-auto rounded-lg mb-2" src="" alt="Pet Image">
-    <button id="close-modal" class="mt-4 bg-[#0E7A81] text-white p-2 rounded">Close</button>
-</dialog>
+
     </main>
     <footer class="bg-[#131313] px-5 py-6 flex flex-col lg:flex-row lg:justify-between justify-center gap-6 lg:gap-3 items-center">
         <div>
@@ -152,14 +148,80 @@
         
     </footer>
     
+
+
+
+
+
+    <!-- <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <h3 id="modal-pet-name" class="text-lg font-bold"></h3>
+          <img id="modal-pet-image" class="w-full h-auto my-4" alt="Pet Image">
+          <p id="modal-pet-description" class="py-4"></p>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog> -->
+      
+
+<!-- Modal Structure -->
+<!-- Modal Structure -->
+<div id="pet-details-modal" class="hidden fixed inset-0 flex items-center justify-center z-50">
+    <div class="bg-white rounded-md shadow-lg p-6">
+        <div id="modal-content">
+            <!-- Pet details will be dynamically inserted here -->
+        </div>
+        <button id="close-modal" class="mt-4 bg-gray-300 rounded-md px-4 py-2">Close</button>
+    </div>
+</div>
+
+
+<!-- Modal Structure -->
+<div id="image" class="image-container"></div>
+<div id="pet-details" class="pet-details-container"></div>
+
+
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      
+      <img id="petImage" src="" alt="Pet Image" class="w-full h-auto my-4" />
+      <div class="flex items-center space-x-3">
+        
+        <h3 class="text-lg font-bold" id="petName">Pet Name</h3>
+      </div>
+      <div class="flex items-center space-x-3">
+        
+      </div>
+      <p><strong>Breed:</strong> <span id="petBreed"></span></p>
+      <p><strong>Category:</strong> <span id="petCategory"></span></p>
+      <p><strong>Date of Birth:</strong> <span id="petDOB"></span></p>
+      <p><strong>Price:</strong> $<span id="petPrice"></span></p>
+      <p><strong>Gender:</strong> <span id="petGender"></span></p>
+      <p><strong>Vaccination Status:</strong> <span id="petVaccinationStatus"></span></p>
+      <p id="petDetails" class="py-2">Pet details go here...</p>
+      
+      <div class="modal-action">
+        <button class="btn" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </dialog>
+  
+
     <script src="./jsFile/index.js"></script>
 
 
-    
-    <!-- Modal Structure -->
+    <!-- Modal HTML -->
+
+
+
+<!-- JavaScript -->
+
+
+ 
     
 
-    
-    
 </body>
 </html>
